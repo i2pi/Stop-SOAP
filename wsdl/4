@@ -1,0 +1,1178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.iicmva.com/CoverageVerification/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.iicmva.com/CoverageVerification/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://www.iicmva.com/CoverageVerification/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="CoverageRequest">
+<xs:complexType>
+<xs:sequence>
+  <xs:element maxOccurs="1" minOccurs="0" name="RequestorInformation" type="tns:RequestorInformationModule"/>
+  <xs:element maxOccurs="1" name="Detail">
+		<xs:complexType>
+			<xs:sequence>
+                  <xs:element maxOccurs="1" minOccurs="1" name="PolicyInformation" type="tns:CoveragePolicyRequestModule"/>
+                  <xs:element minOccurs="0" name="InsuredInformation" type="tns:InsuredModule"/>
+                  <xs:element maxOccurs="1" minOccurs="0" name="VehicleInformation" type="tns:RiskInformationModule"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+  </xs:sequence>
+  </xs:complexType>
+  </xs:element>
+      <xs:complexType name="RequestorInformationModule">
+        <xs:annotation>
+          <xs:documentation>
+Module: Requestor Information Module: Defines the party requesting the insurance information.
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          
+              <xs:element maxOccurs="1" name="Individual" type="tns:IndividualBlock2"/>
+              <xs:element maxOccurs="1" minOccurs="0" name="Organization" type="tns:OrganizationBlock3"/>
+			  <xs:element maxOccurs="1" minOccurs="0" name="ReasonDetails" type="tns:DocumentDetailBlock2"/>
+        </xs:sequence>
+      </xs:complexType> 
+      
+<xs:complexType name="CoveragePolicyRequestModule">
+				<xs:annotation>
+					<xs:documentation>
+Module: Coverage Policy Request Module: Defines the information needed to identify the message and the insurance policy that information is being requested for.
+                        </xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element maxOccurs="1" minOccurs="1" name="OrganizationDetails" type="tns:OrganizationBlock4"/>
+					<xs:element maxOccurs="1" minOccurs="1" name="PolicyDetails" type="tns:DocumentDetailBlock3"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="BodilyInjuryCoverage" type="tns:AmountBlock1"/>
+					<xs:element maxOccurs="1" minOccurs="0" name="PropertyDamageCoverage" type="tns:AmountBlock1"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="InsuredModule">
+		<xs:annotation>
+			<xs:documentation>
+Module: Insured Module: Describes the party information is being requested on.
+		</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="PrimaryNameInformation" type="tns:IndividualBlock3"/>
+			<xs:element maxOccurs="20" minOccurs="0" name="AdditionalNamesInformation" type="tns:IndividualBlock3"/>
+			<xs:element name="Address" type="tns:AddresslBlock1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RiskInformationModule">
+        <xs:annotation>
+          <xs:documentation>
+Module: Risk Information Module: Defines the information used to identify a risk.
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" name="VehicleDetails" type="tns:ResourceIdentificationBlock1"/>
+        </xs:sequence>
+      </xs:complexType>
+	<xs:complexType name="IndividualBlock2">
+		<xs:annotation>
+			<xs:documentation>
+Block: Individual Block: Identiifies the role and identity of an individual. Individual Block_2: Defines the individual requesting the  information.
+		</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ParsedName" type="tns:IndividualNameComponent2"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="OrganizationBlock3">
+        <xs:annotation>
+          <xs:documentation>
+Block: Organization Block: Specifies the role and identity of an organization. Organization Block_3: Defines the organization requesting the information.
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" name="Name" type="tns:NameText1"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DocumentDetailBlock2">
+        <xs:annotation>
+          <xs:documentation>
+Block: Document Detail Block: Specifies a logical or physical document level of contextual information, unique identification number, creation date, etc. Document Detail Block_2: Defines the reason the requestor needs the insurance information.
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" name="ReasonCode" type="tns:ReasonCode1"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="TrackingNumber" type="tns:ResourceIdentifier12"/>
+        </xs:sequence>
+      </xs:complexType>
+			<xs:complexType name="OrganizationBlock4">
+		<xs:annotation>
+			<xs:documentation>
+Block: Organization Block: Specifies the role and identity of an organization. Organization Block_4: Information provided to identify the insurance company.
+		</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="NAIC" type="tns:PartyIdentifier18"/>
+		</xs:sequence>
+	</xs:complexType>
+			<xs:complexType name="DocumentDetailBlock3">
+		<xs:annotation>
+			<xs:documentation>
+Block: Document Detail Block: Specifies a logical or physical document level of contextual information, unique identification number, creation date, etc. Document Detail Block_3: The specific items that identify an insurance policy
+		</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="VerificationDate" type="tns:DateTime1"/>
+			<xs:element name="UniqueKey" type="tns:ResourceIdentifier12"/>
+			<xs:element name="PolicyState" type="tns:ResourceIdentifier14"/>
+		</xs:sequence>
+	</xs:complexType>
+			<xs:complexType name="AmountBlock1">
+				<xs:annotation>
+					<xs:documentation>
+					
+Block: Amount Block: Describes the value and purpose of a monetary amount. Can also optionally include the value and reason for adjustments to an amount.  All concrete amount blocks must clearly state the purpose and effect of adjustments (indicate if an amount includes an adjustment). Amount Block_1: Identifies how the coverage will be paid.
+
+					</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="TypeofLimit" type="tns:ResourceCode9"/>
+					<xs:element name="CoverageAmount" type="tns:Amount1"/>
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="IndividualBlock3">
+		<xs:annotation>
+			<xs:documentation>
+Block: Individual Block: Identiifies the role and identity of an individual. Individual Block_3: Defines the party that that information is being requested on.
+		</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:sequence>
+				<xs:element name="ParsedName" type="tns:IndividualNameComponent2"/>
+				<xs:element minOccurs="0" name="Name" type="tns:NameText1"/>
+			</xs:sequence>
+			<xs:element minOccurs="0" name="SocialSecurityNumber" type="tns:PartyIdentifier9"/>
+			<xs:element minOccurs="0" name="DriversLicense" type="tns:PartyIdentifier8"/>
+			<xs:element minOccurs="0" name="FEIN" type="tns:PartyIdentifier8"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AddresslBlock1">
+		<xs:annotation>
+			<xs:documentation>
+Block: Address Block: Grouping of information used to specify the location address. Address Block_1: Describes what is commonly known as the mailing address.
+		</xs:documentation>
+		</xs:annotation>
+			<xs:sequence>
+				<xs:element maxOccurs="2" name="StreetAddress" type="tns:LocationText9"/>
+				<xs:element minOccurs="0" name="SubsiteAddress" type="tns:SubsiteAddressComponent1"/>
+				<xs:element minOccurs="0" name="City" type="tns:LocationText1"/>
+				<xs:element minOccurs="0" name="CountrySubdivision" type="tns:LocationCode2"/>
+				<xs:element minOccurs="0" name="PostalCode" type="tns:LocationIdentifier1"/>
+				<xs:element minOccurs="0" name="Country" type="tns:LocationCode3"/>
+			</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ResourceIdentificationBlock1">
+        <xs:annotation>
+          <xs:documentation>
+Block: Resource Identification Block: Combination of constructs that together identify a specific resource. Resource Identification Block_1:  The terms used to specifically identify a car description of a vehicle. 
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" name="VIN" type="tns:ResourceIdentifier11"/>
+          <xs:element maxOccurs="1" minOccurs="1" name="Make" type="tns:ResourceIdentifier12"/>
+          <xs:element maxOccurs="1" minOccurs="1" name="Model" type="tns:ResourceIdentifier12"/>
+          <xs:element maxOccurs="1" minOccurs="1" name="Year" type="tns:DateTimeText2"/>
+        </xs:sequence>
+      </xs:complexType>
+	<xs:complexType name="IndividualNameComponent2">
+		<xs:annotation>
+			<xs:documentation>
+Component: Individual Name Component : Grouping of information that is used to specify an individual's name.   Individual Name Component_2
+                       : Name of the individual.
+		</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Prefix" type="tns:NameText2"/>
+			<xs:element name="GivenName" type="tns:NameText4"/>
+			<xs:element minOccurs="0" name="MiddleName" type="tns:NameText5"/>
+			<xs:element maxOccurs="2" name="Surname" type="tns:NameText6"/>
+			<xs:element minOccurs="0" name="Suffix" type="tns:NameText2"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SubsiteAddressComponent1">
+        <xs:annotation>
+          <xs:documentation>
+Component: Subsite Address Component : Detailed breakout of the information that is often found on the Address Lines of a mailing address such as apartment, building, department, floor, mail stop, room, and suite.   Subsite Address Component_1
+                       : Detailed breakout of the information that is often found on the address lines of a mailing address such as apartment, building, department, floor, mail stop, room, or suite.
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+              <xs:element maxOccurs="1" name="Apartment" type="tns:LocationText2"/>
+              <xs:element maxOccurs="1" minOccurs="0" name="Building" type="tns:LocationText7"/>
+              <xs:element maxOccurs="1" minOccurs="0" name="Department" type="tns:LocationText7"/>
+              <xs:element maxOccurs="1" minOccurs="0" name="Floor" type="tns:LocationText2"/>
+              <xs:element maxOccurs="1" minOccurs="0" name="Room" type="tns:LocationText2"/>
+              <xs:element maxOccurs="1" minOccurs="0" name="Suite" type="tns:LocationText2"/>
+   		</xs:sequence>
+      </xs:complexType>
+	<xs:complexType name="NameText2">
+		<xs:annotation>
+			<xs:documentation>
+Primitive: Name Text: A word or phrase that constitutes the distinctive designation of a person or thing. Name Text_2: The title before an individual's name.
+		</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="NameText2_Content">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="NameText4">
+		<xs:annotation>
+			<xs:documentation>
+Primitive: Name Text: A word or phrase that constitutes the distinctive designation of a person or thing. Name Text_4: A word or phrase that designates a person or thing.
+		</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="NameText4_Content">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="35"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="NameText5">
+		<xs:annotation>
+			<xs:documentation>
+Primitive: Name Text: A word or phrase that constitutes the distinctive designation of a person or thing. Name Text_5: A word or phrase that designates a person or thing.
+		</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="NameText5_Content">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="25"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="NameText6">
+		<xs:annotation>
+			<xs:documentation>
+Primitive: Name Text: A word or phrase that constitutes the distinctive designation of a person or thing. Name Text_6: A word or phrase that designates a person or thing.
+		</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="NameText6_Content">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="60"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="NameText1">
+		<xs:annotation>
+			<xs:documentation>
+Primitive: Name Text: A word or phrase that constitutes the distinctive designation of a person or thing. Name Text_1: A word or phrase that designates a person or thing.
+		</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="NameText1_Content">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="80"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ReasonCode1">
+        <xs:annotation>
+          <xs:documentation>
+Primitive: Reason Code: Something that supports a conclusion or explains a fact.  Describes or specifies the statement offered in explanation or justification or motivation.  May answer the question why. Reason Code_1: The code identifying the reason why the request is needed.
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+          <xs:extension base="xs:token">
+            <xs:attribute name="ListAgencyIdentifier" type="tns:ReasonCode1_ListAgencyIdentifier"/>
+            <xs:attribute name="ListAgencyNameText" type="tns:ReasonCode1_ListAgencyNameText"/>
+            <xs:attribute name="ListNameText" type="tns:ReasonCode1_ListNameText"/>
+            <xs:attribute name="ListIdentifier" type="tns:ReasonCode1_ListIdentifier"/>
+            <xs:attribute name="ListSchemeURI" type="tns:ReasonCode1_ListSchemeURI"/>
+            <xs:attribute name="ListURI" type="tns:ReasonCode1_ListURI"/>
+            <xs:attribute name="ListVersionIdentifier" type="tns:ReasonCode1_ListVersionIdentifier"/>
+            <xs:attribute name="NameText" type="tns:ReasonCode1_NameText"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:simpleType name="ReasonCode1_Content">
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="Accident"/>
+          <xs:enumeration value="RegistrationofVehicle"/>
+          <xs:enumeration value="RegistrationRenewal"/>
+          <xs:enumeration value="CoverageVerification"/>
+          <xs:enumeration value="TrafficViolationwithAccident"/>
+          <xs:enumeration value="TrafficViolation"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ReasonCode1_ListAgencyIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="ReasonCode1_ListAgencyNameText">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="ReasonCode1_ListNameText">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="ReasonCode1_ListIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="ReasonCode1_ListSchemeURI">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="ReasonCode1_ListURI">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="ReasonCode1_ListVersionIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="ReasonCode1_NameText">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+        <xs:complexType name="ResourceIdentifier12">
+        <xs:annotation>
+          <xs:documentation>
+Primitive: Resource Identifier: Specified a supply or support, i.e. material or service. Resource Identifier_12: Identifies information about the risk.
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+          <xs:extension base="xs:token">
+            <xs:attribute name="IdSchemeAgencyIdentifier" type="tns:ResourceIdentifier12_IdSchemeAgencyIdentifier"/>
+            <xs:attribute name="IdSchemeAgencyNameText" type="tns:ResourceIdentifier12_IdSchemeAgencyName"/>
+            <xs:attribute name="IdSchemeIdentifier" type="tns:ResourceIdentifier12_IdSchemeIdentifier"/>
+            <xs:attribute name="IdSchemeNameText" type="tns:ResourceIdentifier12_IdSchemeNameText"/>
+            <xs:attribute name="IdSchemeURI" type="tns:ResourceIdentifier12_ListSchemeURI"/>
+            <xs:attribute name="IdSchemeVersionIdentifier" type="tns:ResourceIdentifier12_IdSchemeVersionIdentifier"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:simpleType name="ResourceIdentifier12_Content">
+        <xs:restriction base="xs:token">
+          <xs:minLength value="1"/>
+          <xs:maxLength value="50"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ResourceIdentifier12_IdSchemeAgencyIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="ResourceIdentifier12_IdSchemeAgencyName">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="ResourceIdentifier12_IdSchemeIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="ResourceIdentifier12_IdSchemeNameText">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="ResourceIdentifier12_ListSchemeURI">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="ResourceIdentifier12_IdSchemeVersionIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>   
+	<xs:complexType name="Amount1">
+		<xs:annotation>
+			<xs:documentation>
+Primitive: Amount: A monetary amount. Amount_1: The sum of dollars and cents that will be paid in a loss.
+		</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attribute name="currencyidentifier" type="tns:Amount1_CurrencyIdentifier"/>
+				<xs:attribute name="CurrencyCodeListVersionIdentifier" type="tns:Amount1_CurrencyCodeListVersionIdentifier"/>
+				<xs:attribute name="CurrencyCodeList" type="tns:Amount1_CurrencyCodeList"/>
+			</xs:extension>
+		</xs:simpleContent>
+		</xs:complexType>
+		<xs:simpleType name="Amount1_Content">
+			<xs:restriction base="xs:decimal">
+				<xs:fractionDigits value="2"/>
+				<xs:totalDigits value="10"/>
+			</xs:restriction>
+		</xs:simpleType>
+		<xs:simpleType name="Amount1_CurrencyIdentifier">
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+		<xs:simpleType name="Amount1_CurrencyCodeListVersionIdentifier">
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+		<xs:simpleType name="Amount1_CurrencyCodeList">
+			<xs:restriction base="xs:string"/>
+		</xs:simpleType>
+		<xs:complexType name="PartyIdentifier9">
+		<xs:annotation>
+			<xs:documentation>
+Primitive: Party Identifier: Identifier which uniquely specifies a party, either an Individual or an Organization. Party Identifier_9: A unique number assigned to identify a party.
+		</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:token">
+				<xs:attribute name="IdSchemeAgencyIdentifier" type="tns:PartyIdentifier9_IdSchemeAgencyIdentifier"/>
+				<xs:attribute name="IdSchemeAgencyNameText" type="tns:PartyIdentifier9_IdSchemeAgencyName"/>
+				<xs:attribute name="IdSchemeIdentifier" type="tns:PartyIdentifier9_IdSchemeIdentifier"/>
+				<xs:attribute name="IdSchemeNameText" type="tns:PartyIdentifier9_IdSchemeNameText"/>
+				<xs:attribute name="IdSchemeURI" type="tns:PartyIdentifier9_ListSchemeURI"/>
+				<xs:attribute name="IdSchemeVersionIdentifier" type="tns:PartyIdentifier9_IdSchemeVersionIdentifier"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="PartyIdentifier9_Content">
+		<xs:restriction base="xs:token">
+			<xs:minLength value="9"/>
+			<xs:maxLength value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIdentifier9_IdSchemeAgencyIdentifier">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIdentifier9_IdSchemeAgencyName">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIdentifier9_IdSchemeIdentifier">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIdentifier9_IdSchemeNameText">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIdentifier9_ListSchemeURI">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIdentifier9_IdSchemeVersionIdentifier">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+		<xs:complexType name="PartyIdentifier8">
+		<xs:annotation>
+			<xs:documentation>
+Primitive: Party Identifier: Identifier which uniquely specifies a party, either an Individual or an Organization. Party Identifier_8: A unique number assigned to identify a party
+		</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:token">
+				<xs:attribute name="IdSchemeAgencyIdentifier" type="tns:PartyIdentifier8_IdSchemeAgencyIdentifier"/>
+				<xs:attribute name="IdSchemeAgencyNameText" type="tns:PartyIdentifier8_IdSchemeAgencyName"/>
+				<xs:attribute name="IdSchemeIdentifier" type="tns:PartyIdentifier8_IdSchemeIdentifier"/>
+				<xs:attribute name="IdSchemeNameText" type="tns:PartyIdentifier8_IdSchemeNameText"/>
+				<xs:attribute name="IdSchemeURI" type="tns:PartyIdentifier8_ListSchemeURI"/>
+				<xs:attribute name="IdSchemeVersionIdentifier" type="tns:PartyIdentifier8_IdSchemeVersionIdentifier"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="PartyIdentifier8_Content">
+		<xs:restriction base="xs:token">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIdentifier8_IdSchemeAgencyIdentifier">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIdentifier8_IdSchemeAgencyName">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIdentifier8_IdSchemeIdentifier">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIdentifier8_IdSchemeNameText">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIdentifier8_ListSchemeURI">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIdentifier8_IdSchemeVersionIdentifier">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	 <xs:complexType name="LocationText9">
+        <xs:annotation>
+          <xs:documentation>
+Primitive: Location Text: A word or phrase that describes a position or site. Location Text_9: A word or phrase that describes a position or site.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+          <xs:extension base="xs:string"/>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:simpleType name="LocationText9_Content">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"/>
+          <xs:maxLength value="80"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="LocationText2">
+        <xs:annotation>
+          <xs:documentation>
+Primitive: Location Text: A word or phrase that describes a position or site. Location Text_2: A specific identifier on a public way or thoroughfare.  i.e. Street Number.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+          <xs:extension base="xs:string"/>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:simpleType name="LocationText2_Content">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"/>
+          <xs:maxLength value="20"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="LocationText7">
+        <xs:annotation>
+          <xs:documentation>
+Primitive: Location Text: A word or phrase that describes a position or site. Location Text_7: A word or phrase that describes a position or site.
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+          <xs:extension base="xs:string"/>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:simpleType name="LocationText7_Content">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"/>
+          <xs:maxLength value="55"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="LocationText1">
+        <xs:annotation>
+          <xs:documentation>
+Primitive: Location Text: A word or phrase that describes a position or site. Location Text_1: A word or phrase that describes a position or site.
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+          <xs:extension base="xs:string"/>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:simpleType name="LocationText1_Content">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="2"/>
+          <xs:maxLength value="30"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="LocationCode2">
+        <xs:annotation>
+          <xs:documentation>
+Primitive: Location Code: A list of codes that designates a place. Location Code_2: The highest level of subdivision within a country.
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+          <xs:extension base="xs:token">
+            <xs:attribute name="ListAgencyIdentifier" type="tns:LocationCode2_ListAgencyIdentifier"/>
+            <xs:attribute name="ListAgencyNameText" type="tns:LocationCode2_ListAgencyNameText"/>
+            <xs:attribute name="ListNameText" type="tns:LocationCode2_ListNameText"/>
+            <xs:attribute name="ListIdentifier" type="tns:LocationCode2_ListIdentifier"/>
+            <xs:attribute name="ListSchemeURI" type="tns:LocationCode2_ListSchemeURI"/>
+            <xs:attribute name="ListURI" type="tns:LocationCode2_ListURI"/>
+            <xs:attribute name="ListVersionIdentifier" type="tns:LocationCode2_ListVersionIdentifier"/>
+            <xs:attribute name="NameText" type="tns:LocationCode2_NameText"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:simpleType name="LocationCode2_Content">
+        <xs:restriction base="xs:token">
+          <xs:minLength value="1"/>
+          <xs:maxLength value="3"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="LocationCode2_ListAgencyIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationCode2_ListAgencyNameText">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationCode2_ListNameText">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationCode2_ListIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationCode2_ListSchemeURI">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationCode2_ListURI">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationCode2_ListVersionIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationCode2_NameText">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+         <xs:complexType name="LocationIdentifier1">
+        <xs:annotation>
+          <xs:documentation>
+Primitive: Location Identifier: An identifier that designates a place. Location Identifier_1: Defines international postal code.
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+          <xs:extension base="xs:token">
+            <xs:attribute name="IdSchemeAgencyIdentifier" type="tns:LocationIdentifier1_IdSchemeAgencyIdentifier"/>
+            <xs:attribute name="IdSchemeAgencyNameText" type="tns:LocationIdentifier1_IdSchemeAgencyName"/>
+            <xs:attribute name="IdSchemeIdentifier" type="tns:LocationIdentifier1_IdSchemeIdentifier"/>
+            <xs:attribute name="IdSchemeNameText" type="tns:LocationIdentifier1_IdSchemeNameText"/>
+            <xs:attribute name="IdSchemeURI" type="tns:LocationIdentifier1_ListSchemeURI"/>
+            <xs:attribute name="IdSchemeVersionIdentifier" type="tns:LocationIdentifier1_IdSchemeVersionIdentifier"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:simpleType name="LocationIdentifier1_Content">
+        <xs:restriction base="xs:token">
+          <xs:minLength value="3"/>
+          <xs:maxLength value="15"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="LocationIdentifier1_IdSchemeAgencyIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationIdentifier1_IdSchemeAgencyName">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationIdentifier1_IdSchemeIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationIdentifier1_IdSchemeNameText">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationIdentifier1_ListSchemeURI">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationIdentifier1_IdSchemeVersionIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:complexType name="LocationCode3">
+        <xs:annotation>
+          <xs:documentation>
+Primitive: Location Code: A list of codes that designates a place. Location Code_3: Code identifying a country.
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+          <xs:extension base="xs:token">
+            <xs:attribute name="ListAgencyIdentifier" type="tns:LocationCode3_ListAgencyIdentifier"/>
+            <xs:attribute name="ListAgencyNameText" type="tns:LocationCode3_ListAgencyNameText"/>
+            <xs:attribute name="ListNameText" type="tns:LocationCode3_ListNameText"/>
+            <xs:attribute name="ListIdentifier" type="tns:LocationCode3_ListIdentifier"/>
+            <xs:attribute name="ListSchemeURI" type="tns:LocationCode3_ListSchemeURI"/>
+            <xs:attribute name="ListURI" type="tns:LocationCode3_ListURI"/>
+            <xs:attribute name="ListVersionIdentifier" type="tns:LocationCode3_ListVersionIdentifier"/>
+            <xs:attribute name="NameText" type="tns:LocationCode3_NameText"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:simpleType name="LocationCode3_Content">
+        <xs:restriction base="xs:token">
+          <xs:minLength value="2"/>
+          <xs:maxLength value="3"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="LocationCode3_ListAgencyIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationCode3_ListAgencyNameText">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationCode3_ListNameText">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationCode3_ListIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationCode3_ListSchemeURI">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationCode3_ListURI">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationCode3_ListVersionIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="LocationCode3_NameText">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:complexType name="ResourceIdentifier11">
+        <xs:annotation>
+          <xs:documentation>
+Primitive: Resource Identifier: Specified a supply or support, i.e. material or service. Resource Identifier_11: A unique number assigned to identify a vehicle.
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+          <xs:extension base="xs:token">
+            <xs:attribute name="IdSchemeAgencyIdentifier" type="tns:ResourceIdentifier11_IdSchemeAgencyIdentifier"/>
+            <xs:attribute name="IdSchemeAgencyNameText" type="tns:ResourceIdentifier11_IdSchemeAgencyName"/>
+            <xs:attribute name="IdSchemeIdentifier" type="tns:ResourceIdentifier11_IdSchemeIdentifier"/>
+            <xs:attribute name="IdSchemeNameText" type="tns:ResourceIdentifier11_IdSchemeNameText"/>
+            <xs:attribute name="IdSchemeURI" type="tns:ResourceIdentifier11_ListSchemeURI"/>
+            <xs:attribute name="IdSchemeVersionIdentifier" type="tns:ResourceIdentifier11_IdSchemeVersionIdentifier"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:simpleType name="ResourceIdentifier11_Content">
+        <xs:restriction base="xs:token">
+          <xs:minLength value="1"/>
+          <xs:maxLength value="30"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ResourceIdentifier11_IdSchemeAgencyIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="ResourceIdentifier11_IdSchemeAgencyName">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="ResourceIdentifier11_IdSchemeIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="ResourceIdentifier11_IdSchemeNameText">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="ResourceIdentifier11_ListSchemeURI">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="ResourceIdentifier11_IdSchemeVersionIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:complexType name="DateTimeText2">
+        <xs:annotation>
+          <xs:documentation>
+Primitive: Date Time Text: Part of a complete date time combination. (i.e. Year as CCYY or Time as HHMM) Date Time Text_2: Specifies a year.
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+          <xs:extension base="xs:string"/>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:simpleType name="DateTimeText2_Content">
+        <xs:restriction base="xs:string">
+          <xs:minLength value="4"/>
+          <xs:maxLength value="4"/>
+          <xs:pattern value="\d\d\d\d"/>
+        </xs:restriction>
+      </xs:simpleType>
+	<xs:complexType name="PartyIdentifier18">
+		<xs:annotation>
+			<xs:documentation>
+Primitive: Party Identifier: Identifier which uniquely specifies a party, either an Individual or an Organization. Party Identifier_18: The code created by the National Association of Insurance Commissioners (NAIC) to identify an Insurance company.
+		</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:token">
+				<xs:attribute name="IdSchemeAgencyIdentifier" type="tns:PartyIdentifier18_IdSchemeAgencyIdentifier"/>
+				<xs:attribute name="IdSchemeAgencyNameText" type="tns:PartyIdentifier18_IdSchemeAgencyName"/>
+				<xs:attribute name="IdSchemeIdentifier" type="tns:PartyIdentifier18_IdSchemeIdentifier"/>
+				<xs:attribute name="IdSchemeNameText" type="tns:PartyIdentifier18_IdSchemeNameText"/>
+				<xs:attribute name="IdSchemeURI" type="tns:PartyIdentifier18_ListSchemeURI"/>
+				<xs:attribute name="IdSchemeVersionIdentifier" type="tns:PartyIdentifier18_IdSchemeVersionIdentifier"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="PartyIdentifier18_Content">
+		<xs:restriction base="xs:token">
+			<xs:minLength value="2"/>
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIdentifier18_IdSchemeAgencyIdentifier">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIdentifier18_IdSchemeAgencyName">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIdentifier18_IdSchemeIdentifier">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIdentifier18_IdSchemeNameText">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIdentifier18_ListSchemeURI">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="PartyIdentifier18_IdSchemeVersionIdentifier">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+      <xs:complexType name="DateTime1">
+		<xs:annotation>
+			<xs:documentation>
+Primitive: Date Time: Specifies a date and/or time Date Time_1: Date and/or Time.
+		</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:dateTime">
+				<xs:attribute name="FormatText" type="tns:DateTime1_FormatText"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="DateTime1_Content">
+		<xs:restriction base="xs:dateTime"/>
+	</xs:simpleType>
+	<xs:simpleType name="DateTime1_FormatText">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:complexType name="ResourceIdentifier14">
+		<xs:annotation>
+			<xs:documentation>
+Primitive: Resource Identifier: Specified a supply or support, i.e. material or service. Resource Identifier_14: Identifies the state where the policy is insured.
+		</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:token">
+				<xs:attribute name="IdSchemeAgencyIdentifier" type="tns:ResourceIdentifier14_IdSchemeAgencyIdentifier"/>
+				<xs:attribute name="IdSchemeAgencyNameText" type="tns:ResourceIdentifier14_IdSchemeAgencyName"/>
+				<xs:attribute name="IdSchemeIdentifier" type="tns:ResourceIdentifier14_IdSchemeIdentifier"/>
+				<xs:attribute name="IdSchemeNameText" type="tns:ResourceIdentifier14_IdSchemeNameText"/>
+				<xs:attribute name="IdSchemeURI" type="tns:ResourceIdentifier14_ListSchemeURI"/>
+				<xs:attribute name="IdSchemeVersionIdentifier" type="tns:ResourceIdentifier14_IdSchemeVersionIdentifier"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="ResourceIdentifier14_Content">
+		<xs:restriction base="xs:token">
+			<xs:minLength value="2"/>
+			<xs:maxLength value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ResourceIdentifier14_IdSchemeAgencyIdentifier">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ResourceIdentifier14_IdSchemeAgencyName">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ResourceIdentifier14_IdSchemeIdentifier">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ResourceIdentifier14_IdSchemeNameText">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ResourceIdentifier14_ListSchemeURI">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ResourceIdentifier14_IdSchemeVersionIdentifier">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+		<xs:complexType name="ResourceCode9">
+		<xs:annotation>
+			<xs:documentation>
+Primitive: Resource Code: Specifies a supply or support. i.e. material or service. Resource Code_9: Specifies how the coverage amount will be applied, ie. combined single limits, per person/per occurrence.
+		</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:token">
+				<xs:attribute name="ListAgencyIdentifier" type="tns:ResourceCode9_ListAgencyIdentifier"/>
+				<xs:attribute name="ListAgencyNameText" type="tns:ResourceCode9_ListAgencyNameText"/>
+				<xs:attribute name="ListNameText" type="tns:ResourceCode9_ListNameText"/>
+				<xs:attribute name="ListIdentifier" type="tns:ResourceCode9_ListIdentifier"/>
+				<xs:attribute name="ListSchemeURI" type="tns:ResourceCode9_ListSchemeURI"/>
+				<xs:attribute name="ListURI" type="tns:ResourceCode9_ListURI"/>
+				<xs:attribute name="ListVersionIdentifier" type="tns:ResourceCode9_ListVersionIdentifier"/>
+				<xs:attribute name="NameText" type="tns:ResourceCode9_NameText"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="ResourceCode9_Content">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="PerOccurrence"/>
+			<xs:enumeration value="CombinedSingleLimit"/>
+			<xs:enumeration value="PerPerson"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ResourceCode9_ListAgencyIdentifier">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ResourceCode9_ListAgencyNameText">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ResourceCode9_ListNameText">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ResourceCode9_ListIdentifier">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ResourceCode9_ListSchemeURI">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ResourceCode9_ListURI">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ResourceCode9_ListVersionIdentifier">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="ResourceCode9_NameText">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+			
+	<xs:element name="CoverageResponse">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:documentation>
+				This document is used to respond to an insurance coverage inquiry between Insurance Companies and interested parties such as state supported Motor Vehicle Departments and their agencies.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element maxOccurs="1" minOccurs="0" name="RequestorInformation" type="tns:RequestorInformationModule"/>
+            <xs:element maxOccurs="unbounded" name="Detail">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element maxOccurs="1" minOccurs="1" name="PolicyInformation" type="tns:CoveragePolicyResponseModule"/>
+                  <xs:element maxOccurs="1" minOccurs="0" name="InsuredInformation" type="tns:InsuredModule"/>
+                  <xs:element maxOccurs="1" minOccurs="0" name="VehicleInformation" type="tns:RiskInformationModule"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+	<xs:complexType name="CoveragePolicyResponseModule">
+        <xs:annotation>
+          <xs:documentation>
+			Module: Coverage Policy Response Module: The information needed to provide a response to a policy inquiry.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" name="CoverageStatus" type="tns:StatusInformationBlock4"/>
+          <xs:element maxOccurs="1" minOccurs="1" name="OrganizationDetails" type="tns:OrganizationBlock4"/>
+          <xs:element maxOccurs="1" minOccurs="1" name="PolicyDetails" type="tns:DocumentDetailBlock3"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="BodilyInjuryCoverage" type="tns:AmountBlock1"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="PropertyDamageCoverage" type="tns:AmountBlock1"/>
+        </xs:sequence>
+      </xs:complexType>      	
+    <xs:complexType name="StatusInformationBlock4">
+        <xs:annotation>
+          <xs:documentation>
+Block: Status Information Block: Describes a specific status. Status Information Block_4: Describes the status of the coverage for the policy listed in the inquiry.
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" name="ResponseDetails" type="tns:ParsedStatusComponent3"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ParsedStatusComponent3">
+        <xs:annotation>
+          <xs:documentation>
+Component: Parsed Status Component : Details of a status.   Parsed Status Component_3
+                       : Describes the result of the inquiry.
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" name="ResponseCode" type="tns:EventCode7"/>
+          <xs:element maxOccurs="5" minOccurs="0" name="UnconfirmedReasonCode" type="tns:EventCode8"/>
+        </xs:sequence>
+      </xs:complexType> 
+      <xs:complexType name="EventCode7">
+        <xs:annotation>
+          <xs:documentation>
+Primitive: Event Code: The event described in terms of a code. i.e.  Delivery, Birth, Enrollment Event Code_7: Describes the result of the inquiry.
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+          <xs:extension base="xs:token">
+            <xs:attribute name="ListAgencyIdentifier" type="tns:EventCode7_ListAgencyIdentifier"/>
+            <xs:attribute name="ListAgencyNameText" type="tns:EventCode7_ListAgencyNameText"/>
+            <xs:attribute name="ListNameText" type="tns:EventCode7_ListNameText"/>
+            <xs:attribute name="ListIdentifier" type="tns:EventCode7_ListIdentifier"/>
+            <xs:attribute name="ListSchemeURI" type="tns:EventCode7_ListSchemeURI"/>
+            <xs:attribute name="ListURI" type="tns:EventCode7_ListURI"/>
+            <xs:attribute name="ListVersionIdentifier" type="tns:EventCode7_ListVersionIdentifier"/>
+            <xs:attribute name="NameText" type="tns:EventCode7_NameText"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:simpleType name="EventCode7_Content">
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="Unconfirmed"/>
+          <xs:enumeration value="Confirmed"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="EventCode7_ListAgencyIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="EventCode7_ListAgencyNameText">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="EventCode7_ListNameText">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="EventCode7_ListIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="EventCode7_ListSchemeURI">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="EventCode7_ListURI">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="EventCode7_ListVersionIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="EventCode7_NameText">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:complexType name="EventCode8">
+        <xs:annotation>
+          <xs:documentation>
+Primitive: Event Code: The event described in terms of a code. i.e.  Delivery, Birth, Enrollment Event Code_8: Describes the reason for an unconfirmed response.
+                        </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+          <xs:extension base="xs:token">
+            <xs:attribute name="ListAgencyIdentifier" type="tns:EventCode8_ListAgencyIdentifier"/>
+            <xs:attribute name="ListAgencyNameText" type="tns:EventCode8_ListAgencyNameText"/>
+            <xs:attribute name="ListNameText" type="tns:EventCode8_ListNameText"/>
+            <xs:attribute name="ListIdentifier" type="tns:EventCode8_ListIdentifier"/>
+            <xs:attribute name="ListSchemeURI" type="tns:EventCode8_ListSchemeURI"/>
+            <xs:attribute name="ListURI" type="tns:EventCode8_ListURI"/>
+            <xs:attribute name="ListVersionIdentifier" type="tns:EventCode8_ListVersionIdentifier"/>
+            <xs:attribute name="NameText" type="tns:EventCode8_NameText"/>
+          </xs:extension>
+        </xs:simpleContent>
+      </xs:complexType>
+      <xs:simpleType name="EventCode8_Content">
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="11">
+            <xs:annotation>
+              <xs:documentation>
+                   System Cannot Locate Policy Information - Manual Search In Progress
+              </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="5">
+            <xs:annotation>
+              <xs:documentation>
+                   Missing Verification Date
+              </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="8">
+            <xs:annotation>
+              <xs:documentation>
+                                                            System Found Unique Key - No Coverage on Date Requested
+                                                </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="4">
+            <xs:annotation>
+              <xs:documentation>
+                                                            Missing VIN
+                                                </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="10">
+            <xs:annotation>
+              <xs:documentation>
+                                                            System Found VIN - Unique Key Cannot Be Verified
+                                                </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="2">
+            <xs:annotation>
+              <xs:documentation>
+                                                            Missing Unique Key
+                                                </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="7">
+            <xs:annotation>
+              <xs:documentation>
+                                                            System Cannot Locate Unique Key Information
+                                                </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="9">
+            <xs:annotation>
+              <xs:documentation>
+                                                            System Found Unique Key - VIN Cannot Be Verified
+                                                </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="3">
+            <xs:annotation>
+              <xs:documentation>
+                                                            Missing NAIC Code
+                                                </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="1">
+            <xs:annotation>
+              <xs:documentation>
+                                                            Incorrect Data Format
+                                                </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="12">
+            <xs:annotation>
+              <xs:documentation>
+                                                            System Unavailable
+                                                </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+          <xs:enumeration value="6">
+            <xs:annotation>
+              <xs:documentation>
+                                                            Unauthorized Requestor
+                                                </xs:documentation>
+            </xs:annotation>
+          </xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="EventCode8_ListAgencyIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="EventCode8_ListAgencyNameText">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="EventCode8_ListNameText">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="EventCode8_ListIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="EventCode8_ListSchemeURI">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="EventCode8_ListURI">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="EventCode8_ListVersionIdentifier">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="EventCode8_NameText">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+     		 
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="VerifyInsuranceSoapIn">
+    <wsdl:part name="parameters" element="tns:CoverageRequest"/>
+  </wsdl:message>
+  <wsdl:message name="VerifyInsuranceSoapOut">
+    <wsdl:part name="parameters" element="tns:CoverageResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="VerifyServiceSoap">
+    <wsdl:operation name="VerifyInsurance">
+      <wsdl:input message="tns:VerifyInsuranceSoapIn"/>
+      <wsdl:output message="tns:VerifyInsuranceSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VerifyServiceSoap" type="tns:VerifyServiceSoap">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="VerifyInsurance">
+      <soap:operation soapAction="http://tempuri.org/VerifyInsurance" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VerifyService">
+<documentation xmlns="http://schemas.xmlsoap.org/wsdl/"/>
+    <wsdl:port name="VerifyServiceSoap" binding="tns:VerifyServiceSoap">
+      <soap:address location="http://localhost:8080/pas_strpt/services/VerifyServiceSoap"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

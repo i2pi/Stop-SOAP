@@ -1,0 +1,855 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta name="generator" content="MediaWiki 1.15.4" />
+		<meta name="keywords" content="ModelADService.wsdl" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ADempiere ERP Wiki (en)" />
+		<link title="Creative Commons" type="application/rdf+xml" href="/index.php?title=ModelADService.wsdl&amp;action=creativecommons" rel="meta" />
+		<link rel="copyright" href="http://sourceforge.net/projects/adempiere" />
+		<link rel="alternate" type="application/rss+xml" title="ADempiere ERP Wiki RSS feed" href="/index.php?title=Special:RecentChanges&amp;feed=rss" />
+		<link rel="alternate" type="application/atom+xml" title="ADempiere ERP Wiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom" />
+		<title>ModelADService.wsdl - ADempiere ERP Wiki</title>
+		<link rel="stylesheet" href="/skins/common/shared.css?207" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/skins/common/commonPrint.css?207" type="text/css" media="print" />
+		<link rel="stylesheet" href="/skins/monobook/main.css?207" type="text/css" media="screen" />
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="/index.php?title=MediaWiki:Common.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="/index.php?title=MediaWiki:Print.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" media="print" />
+		<link rel="stylesheet" href="/index.php?title=MediaWiki:Monobook.css&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=18000&amp;action=raw&amp;maxage=18000" type="text/css" />
+		<link rel="stylesheet" href="/index.php?title=-&amp;action=raw&amp;maxage=18000&amp;gen=css" type="text/css" />
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type= "text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/skins";
+		var wgArticlePath = "/$1";
+		var wgScriptPath = "";
+		var wgScript = "/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://www.adempiere.com";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "ModelADService.wsdl";
+		var wgTitle = "ModelADService.wsdl";
+		var wgAction = "view";
+		var wgArticleId = "9922";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 27512;
+		var wgVersion = "1.15.4";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="/skins/common/wikibits.js?207"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="/skins/common/ajax.js?207"></script>
+		<script type="text/javascript" src="/index.php?title=-&amp;action=raw&amp;gen=js&amp;useskin=monobook"><!-- site js --></script>
+	</head>
+<body class="mediawiki ltr ns-0 ns-subject page-ModelADService_wsdl skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">ModelADService.wsdl</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From ADempiere ERP Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<pre>
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;wsdl:definitions targetNamespace=&quot;http://3e.pl/ADInterface&quot; xmlns:tns=&quot;http://3e.pl/ADInterface&quot; xmlns:wsdlsoap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:soap12=&quot;http://www.w3.org/2003/05/soap-envelope&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:soapenc11=&quot;http://schemas.xmlsoap.org/soap/encoding/&quot; xmlns:soapenc12=&quot;http://www.w3.org/2003/05/soap-encoding&quot; xmlns:soap11=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:wsdl=&quot;http://schemas.xmlsoap.org/wsdl/&quot;&gt;
+  &lt;wsdl:types&gt;
+&lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns=&quot;http://3e.pl/ADInterface&quot; elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;http://3e.pl/ADInterface&quot;&gt;
+
+   &lt;xsd:element name=&quot;Window&quot; type=&quot;tns:Window&quot;/&gt;
+
+   &lt;xsd:complexType name=&quot;Window&quot;&gt;
+   	&lt;xsd:sequence&gt;
+   	   	&lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot;/&gt;
+	   	&lt;xsd:element name=&quot;Help&quot; type=&quot;xsd:string&quot;/&gt;
+   		&lt;xsd:element name=&quot;Tabs&quot; type=&quot;tns:TabList&quot;/&gt;
+   	&lt;/xsd:sequence&gt;
+   	&lt;xsd:attribute name=&quot;Name&quot; type=&quot;xsd:string&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsSoTrx&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;WindowNo&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;AD_Table_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;AD_Window_ID&quot; type=&quot;xsd:int&quot;/&gt;	
+   	&lt;xsd:attribute name=&quot;WindowType&quot; type=&quot;xsd:int&quot;/&gt;	
+   	&lt;xsd:attribute name=&quot;AD_Image_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;AD_Color_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsReadWrite&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;WinWidth&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;WinHeight&quot; type=&quot;xsd:int&quot;/&gt;   	
+   	&lt;xsd:attribute name=&quot;IsError&quot; type=&quot;xsd:boolean&quot;/&gt;    		   	   	
+   	&lt;xsd:attribute name=&quot;Error&quot; type=&quot;xsd:string&quot;/&gt;    		   	   	
+   &lt;/xsd:complexType&gt;
+
+
+   &lt;xsd:complexType name=&quot;Tab&quot;&gt;
+   	&lt;xsd:sequence&gt;
+   	   	&lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot;/&gt;
+	   	&lt;xsd:element name=&quot;Help&quot; type=&quot;xsd:string&quot;/&gt;   	
+	   	&lt;xsd:element name=&quot;ReadOnlyLogic&quot; type=&quot;xsd:string&quot;/&gt;   	   	  	
+   		&lt;xsd:element name=&quot;DisplayLogic&quot; type=&quot;xsd:string&quot;/&gt;  	  	
+   		&lt;xsd:element name=&quot;Fields&quot; type=&quot;tns:FieldList&quot;/&gt;
+	   	&lt;xsd:element name=&quot;CommitWarning&quot; type=&quot;xsd:string&quot;/&gt;  	  	   	
+   		&lt;xsd:element name=&quot;WhereClause&quot; type=&quot;xsd:string&quot;/&gt;  	  	
+	   	&lt;xsd:element name=&quot;OrderByClause&quot; type=&quot;xsd:string&quot;/&gt;  	  	
+   	&lt;/xsd:sequence&gt;
+   	&lt;xsd:attribute name=&quot;Name&quot; type=&quot;xsd:string&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsSoTrx&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;TabNo&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;WindowNo&quot; type=&quot;xsd:int&quot;/&gt;   	
+   	&lt;xsd:attribute name=&quot;AD_Table_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;AD_Window_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;AD_Tab_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsSingleRow&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsReadOnly&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsInsertRecord&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;HasTree&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsView&quot; type=&quot;xsd:boolean&quot;/&gt;   	
+  	&lt;xsd:attribute name=&quot;AD_Column_ID&quot; type=&quot;xsd:int&quot;/&gt;
+  	&lt;xsd:attribute name=&quot;TableName&quot; type=&quot;xsd:string&quot;/&gt;
+  	&lt;xsd:attribute name=&quot;AccessLevel&quot; type=&quot;xsd:string&quot;/&gt;  	
+   	&lt;xsd:attribute name=&quot;IsSecurityEnabled&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsDeleteable&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsHighVolume&quot; type=&quot;xsd:boolean&quot;/&gt;   	   	  	
+   	&lt;xsd:attribute name=&quot;AD_Process_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;TabLevel&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;AD_Image_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;Included_Tab_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;ReplicationType&quot; type=&quot;xsd:string&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsSortTab&quot; type=&quot;xsd:boolean&quot;/&gt;   	   	  	
+   	&lt;xsd:attribute name=&quot;AD_ColumnSortOrder_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;AD_ColumnSortYesNo_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;onlyCurrentRows&quot; type=&quot;xsd:boolean&quot;/&gt;   	   	  	
+   	&lt;xsd:attribute name=&quot;onlyCurrentDays&quot; type=&quot;xsd:int&quot;/&gt;   	
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:complexType name=&quot;TabList&quot;&gt;
+   	&lt;xsd:sequence&gt;
+   		&lt;xsd:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;1&quot; name=&quot;Tab&quot; type=&quot;tns:Tab&quot;/&gt;
+   	&lt;/xsd:sequence&gt;
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:complexType name=&quot;FieldList&quot;&gt;
+   	&lt;xsd:sequence&gt;
+   		&lt;xsd:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;1&quot; name=&quot;Field&quot; type=&quot;tns:Field&quot;/&gt;
+   	&lt;/xsd:sequence&gt;
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:complexType name=&quot;Field&quot;&gt;
+   	&lt;xsd:sequence&gt;
+   		&lt;xsd:element name=&quot;Tab&quot; type=&quot;tns:Tab&quot;/&gt;
+   		&lt;xsd:element name=&quot;lookupInfo&quot; type=&quot;tns:LookupInfo&quot;/&gt;
+   		&lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot;/&gt;
+	   	&lt;xsd:element name=&quot;Help&quot; type=&quot;xsd:string&quot;/&gt;   	
+   		&lt;xsd:element name=&quot;ColumnSQL&quot; type=&quot;xsd:string&quot;/&gt;
+   	   	&lt;xsd:element name=&quot;DisplayLogic&quot; type=&quot;xsd:string&quot;/&gt;	   	
+	   	&lt;xsd:element name=&quot;ReadOnlyLogic&quot; type=&quot;xsd:string&quot;/&gt; 	
+ 		&lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;lookup&quot; type=&quot;tns:LookupValues&quot;/&gt;
+   	&lt;/xsd:sequence&gt;
+   	&lt;xsd:attribute name=&quot;Name&quot; type=&quot;xsd:string&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;WindowNo&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;TabNo&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;AD_Window_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;tabReadOnly&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;isProcess&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;ColumnName&quot; type=&quot;xsd:string&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;Header&quot; type=&quot;xsd:string&quot;/&gt;  	
+   	&lt;xsd:attribute name=&quot;displayType&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;AD_Column_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;DisplayLength&quot; type=&quot;xsd:int&quot;/&gt;   	
+   	&lt;xsd:attribute name=&quot;IsSameLine&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsDisplayed&quot; type=&quot;xsd:boolean&quot;/&gt;   	
+   	&lt;xsd:attribute name=&quot;DefaultValue&quot; type=&quot;xsd:string&quot;/&gt;	
+   	&lt;xsd:attribute name=&quot;IsMandatory&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsReadOnly&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsUpdateable&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsAlwaysUpdateable&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsHeading&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsFieldOnly&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsEncryptedField&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsEncryptedColumn&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsSelectionColumn&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;SortNo&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;FieldLength&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;VFormat&quot; type=&quot;xsd:string&quot;/&gt;	
+   	&lt;xsd:attribute name=&quot;ValueMin&quot; type=&quot;xsd:string&quot;/&gt;	
+   	&lt;xsd:attribute name=&quot;ValueMax&quot; type=&quot;xsd:string&quot;/&gt;	
+   	&lt;xsd:attribute name=&quot;FieldGroup&quot; type=&quot;xsd:string&quot;/&gt;	
+   	&lt;xsd:attribute name=&quot;IsKey&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsParent&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;Callout&quot; type=&quot;xsd:string&quot;/&gt;   	
+   	&lt;xsd:attribute name=&quot;AD_Process_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;ObscureType&quot; type=&quot;xsd:string&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;ValidationCode&quot; type=&quot;xsd:string&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;AD_Reference_Value_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;isRange&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;DefaultValue2&quot; type=&quot;xsd:string&quot;/&gt;
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:complexType name=&quot;LookupInfo&quot;&gt;
+   	&lt;xsd:sequence&gt;
+   		&lt;!--  &lt;xsd:element name=&quot;Tab&quot; type=&quot;tns:Tab&quot;/&gt;   		
+   		&lt;xsd:element name=&quot;lookupInfo&quot; type=&quot;tns:LookupInfo&quot;/&gt;--&gt;
+   		&lt;xsd:element name=&quot;ZoomWindow&quot; type=&quot;xsd:int&quot;/&gt;
+   		&lt;xsd:element name=&quot;ZoomWindowPO&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;/xsd:sequence&gt;
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:element name=&quot;WindowTabData&quot; type=&quot;tns:WindowTabData&quot;/&gt;
+
+   &lt;xsd:complexType name=&quot;WindowTabData&quot;&gt;
+   	&lt;xsd:sequence&gt;
+   		&lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;DataSet&quot; type=&quot;tns:DataSet&quot;/&gt;
+   		&lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;RowCount&quot; type=&quot;xsd:int&quot;/&gt;   		
+   		&lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;Success&quot; type=&quot;xsd:boolean&quot;/&gt;
+   		&lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;Error&quot; type=&quot;xsd:string&quot;/&gt;
+   		&lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;ErrorInfo&quot; type=&quot;xsd:string&quot;/&gt;
+   		&lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;Status&quot; type=&quot;xsd:string&quot;/&gt;
+   		&lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;StatusError&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;/xsd:sequence&gt;
+   	&lt;xsd:attribute name=&quot;NumRows&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;TotalRows&quot; type=&quot;xsd:int&quot;/&gt;   	
+   	&lt;xsd:attribute name=&quot;StartRow&quot; type=&quot;xsd:int&quot;/&gt;    	
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:complexType name=&quot;DataSet&quot;&gt;
+   	&lt;xsd:sequence&gt;
+   		&lt;xsd:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;DataRow&quot; type=&quot;tns:DataRow&quot;/&gt;
+   	&lt;/xsd:sequence&gt;
+   &lt;/xsd:complexType&gt;
+
+
+   &lt;xsd:complexType name=&quot;DataRow&quot;&gt;
+   	&lt;xsd:sequence&gt;
+   		&lt;xsd:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;field&quot; type=&quot;tns:DataField&quot;/&gt;
+   	&lt;/xsd:sequence&gt;
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:complexType name=&quot;DataField&quot;&gt;
+   	&lt;xsd:sequence&gt;
+ 	  		&lt;xsd:element name=&quot;val&quot; type=&quot;xsd:string&quot;/&gt;
+ 	  		&lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;lookup&quot; type=&quot;tns:LookupValues&quot;/&gt;
+   	&lt;/xsd:sequence&gt;
+   	&lt;xsd:attribute name=&quot;type&quot; type=&quot;xsd:string&quot; use=&quot;optional&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;column&quot; type=&quot;xsd:string&quot;/&gt;   	
+   	&lt;xsd:attribute name=&quot;lval&quot; type=&quot;xsd:string&quot; use=&quot;optional&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;disp&quot; type=&quot;xsd:boolean&quot; use=&quot;optional&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;edit&quot; type=&quot;xsd:boolean&quot; use=&quot;optional&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;error&quot; type=&quot;xsd:boolean&quot; use=&quot;optional&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;errorVal&quot; type=&quot;xsd:string&quot; use=&quot;optional&quot;/&gt;
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:complexType name=&quot;LookupValues&quot;&gt;
+   	&lt;xsd:sequence&gt;
+   		&lt;xsd:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;lv&quot; type=&quot;tns:LookupValue&quot;/&gt;
+   	&lt;/xsd:sequence&gt;
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:complexType name=&quot;LookupValue&quot;&gt;
+   	&lt;xsd:sequence&gt;
+   	&lt;/xsd:sequence&gt;
+   	&lt;xsd:attribute name=&quot;val&quot; type=&quot;xsd:string&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;key&quot; type=&quot;xsd:string&quot;/&gt;
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:element name=&quot;GetProcessParams&quot; type=&quot;tns:GetProcessParams&quot;/&gt;
+   &lt;xsd:element name=&quot;ProcessParams&quot; type=&quot;tns:ProcessParams&quot;/&gt;
+   &lt;xsd:element name=&quot;RunProcess&quot; type=&quot;tns:RunProcess&quot;/&gt;
+   &lt;xsd:element name=&quot;RunProcessResponse&quot; type=&quot;tns:RunProcessResponse&quot;/&gt;
+
+   &lt;xsd:complexType name=&quot;ProcessParams&quot;&gt;
+   	&lt;xsd:sequence&gt;
+   	  &lt;xsd:element name=&quot;Params&quot; type=&quot;tns:ProcessParamList&quot;/&gt;
+	  &lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot;/&gt;   	
+	  &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/&gt;   	
+	  &lt;xsd:element name=&quot;Help&quot; type=&quot;xsd:string&quot;/&gt;   	  	
+   	&lt;/xsd:sequence&gt;
+   	&lt;xsd:attribute name=&quot;AD_Process_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:complexType name=&quot;GetProcessParams&quot;&gt;
+   	&lt;xsd:sequence&gt;
+   	&lt;/xsd:sequence&gt;
+   	&lt;xsd:attribute name=&quot;AD_Process_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;AD_Menu_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;AD_Record_ID&quot; type=&quot;xsd:int&quot;/&gt; 	
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:complexType name=&quot;RunProcess&quot;&gt;
+   &lt;xsd:sequence&gt;
+   	&lt;xsd:element name=&quot;ParamValues&quot; type=&quot;tns:DataRow&quot;/&gt;
+   &lt;/xsd:sequence&gt;
+   	&lt;xsd:attribute name=&quot;AD_Process_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;AD_Menu_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;AD_Record_ID&quot; type=&quot;xsd:int&quot;/&gt; 	
+   	&lt;xsd:attribute name=&quot;DocAction&quot; type=&quot;xsd:string&quot;/&gt;
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:complexType name=&quot;RunProcessResponse&quot;&gt;
+   &lt;xsd:sequence&gt;
+   	&lt;xsd:element name=&quot;Error&quot; type=&quot;xsd:string&quot;/&gt;   	
+   	&lt;xsd:element name=&quot;Summary&quot; type=&quot;xsd:string&quot;/&gt;
+   	&lt;xsd:element name=&quot;LogInfo&quot; type=&quot;xsd:string&quot;/&gt;
+   	&lt;xsd:element name=&quot;Data&quot; type=&quot;xsd:hexBinary&quot;/&gt;
+   &lt;/xsd:sequence&gt;
+   &lt;xsd:attribute name=&quot;IsError&quot; type=&quot;xsd:boolean&quot;/&gt;
+   &lt;xsd:attribute name=&quot;IsReport&quot; type=&quot;xsd:boolean&quot;/&gt;
+   &lt;xsd:attribute name=&quot;ReportFormat&quot; type=&quot;xsd:string&quot;/&gt;
+   &lt;/xsd:complexType&gt;
+
+
+   &lt;xsd:complexType name=&quot;ProcessParamList&quot;&gt;
+   	&lt;xsd:sequence&gt;
+   		&lt;xsd:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;Param&quot; type=&quot;tns:ProcessParam&quot;/&gt;
+   	&lt;/xsd:sequence&gt;
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:complexType name=&quot;ProcessParam&quot;&gt;
+   	&lt;xsd:sequence&gt;
+   		&lt;xsd:element name=&quot;Description&quot; type=&quot;xsd:string&quot;/&gt;
+	   	&lt;xsd:element name=&quot;Help&quot; type=&quot;xsd:string&quot;/&gt;   	
+ 		&lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;lookup&quot; type=&quot;tns:LookupValues&quot;/&gt;
+   	&lt;/xsd:sequence&gt;
+   	&lt;xsd:attribute name=&quot;Name&quot; type=&quot;xsd:string&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;DefaultValue&quot; type=&quot;xsd:string&quot;/&gt;	
+   	&lt;xsd:attribute name=&quot;DefaultValue2&quot; type=&quot;xsd:string&quot;/&gt;	
+   	&lt;xsd:attribute name=&quot;IsMandatory&quot; type=&quot;xsd:boolean&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;IsRange&quot; type=&quot;xsd:boolean&quot;/&gt;   	
+   	&lt;xsd:attribute name=&quot;FieldLength&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;DisplayType&quot; type=&quot;xsd:int&quot;/&gt;   	   	
+	&lt;xsd:attribute name=&quot;ColumnName&quot; type=&quot;xsd:string&quot;/&gt;    	
+   &lt;/xsd:complexType&gt;
+
+   &lt;!--
+   int WindowNo, int AD_Window_ID, int AD_Menu_ID, int TabNo, int PrevTabNo, int PrevRecNo, boolean getData, int RowStart, int RowCount)
+   --&gt;
+   &lt;xsd:element name=&quot;WindowTabDataReq&quot; type=&quot;tns:WindowTabDataReq&quot;/&gt;
+   &lt;xsd:complexType name=&quot;WindowTabDataReq&quot;&gt;
+     &lt;xsd:sequence&gt;
+	 	&lt;xsd:element name=&quot;FindCriteria&quot; type=&quot;tns:DataRow&quot;/&gt;
+     &lt;/xsd:sequence&gt;
+     &lt;xsd:attribute name=&quot;WindowNo&quot; type=&quot;xsd:int&quot;/&gt;
+     &lt;xsd:attribute name=&quot;AD_Window_ID&quot; type=&quot;xsd:int&quot;/&gt;
+     &lt;xsd:attribute name=&quot;AD_Menu_ID&quot; type=&quot;xsd:int&quot;/&gt;
+     &lt;xsd:attribute name=&quot;TabNo&quot; type=&quot;xsd:int&quot;/&gt;
+     &lt;xsd:attribute name=&quot;PrevTabNo&quot; type=&quot;xsd:int&quot;/&gt;
+     &lt;xsd:attribute name=&quot;PrevRecNo&quot; type=&quot;xsd:int&quot;/&gt;
+     &lt;xsd:attribute name=&quot;getData&quot; type=&quot;xsd:boolean&quot;/&gt;
+     &lt;xsd:attribute name=&quot;RowStart&quot; type=&quot;xsd:int&quot;/&gt;
+     &lt;xsd:attribute name=&quot;RowCount&quot; type=&quot;xsd:int&quot;/&gt;
+
+     &lt;xsd:attribute name=&quot;fromZoom&quot; type=&quot;xsd:boolean&quot;/&gt;
+	 &lt;xsd:attribute name=&quot;fromZoom_Window_ID&quot; type=&quot;xsd:int&quot;/&gt;
+	 &lt;xsd:attribute name=&quot;fromZoom_Tab_ID&quot; type=&quot;xsd:int&quot;/&gt;
+	 &lt;xsd:attribute name=&quot;fromZoom_Row_ID&quot; type=&quot;xsd:int&quot;/&gt;
+	 &lt;xsd:attribute name=&quot;fromZoom_ColumnName&quot; type=&quot;xsd:string&quot;/&gt;
+	 &lt;xsd:attribute name=&quot;fromZoom_ColumnValue&quot; type=&quot;xsd:string&quot;/&gt;
+   &lt;/xsd:complexType&gt;
+
+
+&lt;xsd:element name=&quot;ADMenu&quot; type=&quot;tns:ADMenuItem&quot;/&gt;
+
+
+&lt;xsd:complexType name=&quot;ADMenuItemList&quot;&gt;
+&lt;xsd:sequence&gt;
+ &lt;xsd:element maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; name=&quot;Item&quot; type=&quot;tns:ADMenuItem&quot;/&gt;
+&lt;/xsd:sequence&gt;
+&lt;/xsd:complexType&gt;
+
+&lt;xsd:complexType name=&quot;ADMenuItem&quot;&gt;
+&lt;xsd:sequence&gt;
+  &lt;xsd:element name=&quot;items&quot; type=&quot;tns:ADMenuItemList&quot;/&gt;
+  &lt;xsd:element name=&quot;description&quot; type=&quot;xsd:string&quot;/&gt;
+  &lt;xsd:element name=&quot;url&quot; type=&quot;xsd:string&quot;/&gt;
+&lt;/xsd:sequence&gt;
+&lt;xsd:attribute name=&quot;AD_Menu_ID&quot; type=&quot;xsd:int&quot;/&gt;
+&lt;xsd:attribute name=&quot;type&quot; type=&quot;xsd:string&quot;/&gt;
+&lt;xsd:attribute name=&quot;name&quot; type=&quot;xsd:string&quot;/&gt;
+&lt;/xsd:complexType&gt;
+
+
+&lt;xsd:element name=&quot;ADLoginRequest&quot; type=&quot;tns:ADLoginRequest&quot;/&gt;
+&lt;xsd:element name=&quot;ADLoginResponse&quot; type=&quot;tns:ADLoginResponse&quot;/&gt;
+
+&lt;xsd:complexType name=&quot;ADLoginRequest&quot;&gt;
+&lt;xsd:sequence&gt;
+  &lt;xsd:element name=&quot;user&quot; type=&quot;xsd:string&quot;/&gt;
+  &lt;xsd:element name=&quot;pass&quot; type=&quot;xsd:string&quot;/&gt;
+  &lt;xsd:element name=&quot;lang&quot; type=&quot;xsd:string&quot;/&gt;
+  &lt;xsd:element name=&quot;ClientID&quot; type=&quot;xsd:int&quot;/&gt;
+  &lt;xsd:element name=&quot;RoleID&quot; type=&quot;xsd:int&quot;/&gt;
+  &lt;xsd:element name=&quot;OrgID&quot; type=&quot;xsd:int&quot;/&gt;
+  &lt;xsd:element name=&quot;WarehouseID&quot; type=&quot;xsd:int&quot;/&gt;
+  &lt;xsd:element name=&quot;stage&quot; type=&quot;xsd:int&quot;/&gt;
+&lt;/xsd:sequence&gt;
+&lt;/xsd:complexType&gt;
+
+&lt;xsd:complexType name=&quot;ADLoginResponse&quot;&gt;
+&lt;xsd:sequence&gt;
+  &lt;xsd:element name=&quot;status&quot; type=&quot;xsd:int&quot;/&gt;
+  &lt;xsd:element name=&quot;roles&quot; type=&quot;tns:LookupValues&quot;/&gt;
+  &lt;xsd:element name=&quot;langs&quot; type=&quot;tns:LookupValues&quot;/&gt;
+  &lt;xsd:element name=&quot;orgs&quot; type=&quot;tns:LookupValues&quot;/&gt;
+  &lt;xsd:element name=&quot;clients&quot; type=&quot;tns:LookupValues&quot;/&gt;
+  &lt;xsd:element name=&quot;warehouses&quot; type=&quot;tns:LookupValues&quot;/&gt;
+&lt;/xsd:sequence&gt;
+&lt;/xsd:complexType&gt;
+
+&lt;xsd:complexType name=&quot;Location&quot;&gt;
+&lt;xsd:sequence&gt;
+  &lt;xsd:element name=&quot;C_Location_ID&quot; type=&quot;xsd:int&quot;/&gt;
+  &lt;xsd:element name=&quot;Name&quot; type=&quot;xsd:string&quot;/&gt;
+  &lt;xsd:element name=&quot;Address1&quot; type=&quot;xsd:string&quot;/&gt;
+  &lt;xsd:element name=&quot;Address2&quot; type=&quot;xsd:string&quot;/&gt;
+  &lt;xsd:element name=&quot;City&quot; type=&quot;xsd:string&quot;/&gt;
+  &lt;xsd:element name=&quot;PostalCode&quot; type=&quot;xsd:string&quot;/&gt;
+  &lt;xsd:element name=&quot;C_Country_ID&quot; type=&quot;xsd:int&quot;/&gt;
+  &lt;xsd:element name=&quot;C_Region_ID&quot; type=&quot;xsd:int&quot;/&gt;
+  &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;Countries&quot; type=&quot;tns:LookupValues&quot;/&gt;
+&lt;!--  &lt;xsd:element name=&quot;Regions&quot; type=&quot;tns:LookupValues&quot; minOccurs=&quot;0&quot; maxOccurs=&quot;1&quot; /&gt;    --&gt;
+&lt;/xsd:sequence&gt;
+&lt;/xsd:complexType&gt;
+
+&lt;xsd:complexType name=&quot;StandardResponse&quot;&gt;
+&lt;xsd:sequence&gt;
+   	&lt;xsd:element name=&quot;Error&quot; type=&quot;xsd:string&quot;/&gt;   	
+&lt;/xsd:sequence&gt;
+&lt;xsd:attribute name=&quot;IsError&quot; type=&quot;xsd:boolean&quot;/&gt;
+&lt;xsd:attribute name=&quot;RecordID&quot; type=&quot;xsd:int&quot;/&gt;   	
+&lt;/xsd:complexType&gt;
+
+
+&lt;xsd:element name=&quot;Location&quot; type=&quot;tns:Location&quot;/&gt;
+&lt;xsd:element name=&quot;StandardResponse&quot; type=&quot;tns:StandardResponse&quot;/&gt;
+
+&lt;xsd:element name=&quot;DocAction&quot; type=&quot;tns:DocAction&quot;/&gt;
+
+&lt;xsd:complexType name=&quot;DocAction&quot;&gt;
+&lt;xsd:sequence&gt;
+    &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;Action&quot; type=&quot;tns:LookupValues&quot;/&gt;
+   	&lt;xsd:element name=&quot;Error&quot; type=&quot;xsd:string&quot;/&gt;   	
+&lt;/xsd:sequence&gt;
+&lt;xsd:attribute name=&quot;IsError&quot; type=&quot;xsd:boolean&quot;/&gt;
+&lt;xsd:attribute name=&quot;RecordID&quot; type=&quot;xsd:int&quot;/&gt;   	
+&lt;/xsd:complexType&gt;
+
+&lt;xsd:element name=&quot;getLookupSearchDataReq&quot; type=&quot;tns:getLookupSearchDataReq&quot;/&gt;
+&lt;xsd:complexType name=&quot;getLookupSearchDataReq&quot;&gt;
+ &lt;xsd:sequence&gt;
+    &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;Params&quot; type=&quot;tns:DataRow&quot;/&gt;
+ &lt;/xsd:sequence&gt;
+ &lt;xsd:attribute name=&quot;WindowNo&quot; type=&quot;xsd:int&quot;/&gt;
+ &lt;xsd:attribute name=&quot;TabNo&quot; type=&quot;xsd:int&quot;/&gt;
+ &lt;xsd:attribute name=&quot;RowNo&quot; type=&quot;xsd:int&quot;/&gt;
+ &lt;xsd:attribute name=&quot;ColumnName&quot; type=&quot;xsd:string&quot;/&gt;
+&lt;/xsd:complexType&gt;
+
+
+&lt;!-- Elements added for model web services --&gt;
+
+   &lt;xsd:element name=&quot;ModelSetDocActionRequest&quot; type=&quot;tns:ModelSetDocActionRequest&quot;/&gt;
+
+   &lt;xsd:complexType name=&quot;ModelSetDocAction&quot;&gt;
+   &lt;xsd:sequence&gt;
+     &lt;xsd:element name=&quot;serviceType&quot; type=&quot;xsd:string&quot;/&gt;
+     &lt;xsd:element name=&quot;tableName&quot; type=&quot;xsd:string&quot;/&gt;
+     &lt;xsd:element name=&quot;recordID&quot; type=&quot;xsd:int&quot;/&gt;
+     &lt;xsd:element name=&quot;docAction&quot; type=&quot;xsd:string&quot;/&gt;
+   &lt;/xsd:sequence&gt;
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:complexType name=&quot;ModelSetDocActionRequest&quot;&gt;
+   &lt;xsd:sequence&gt;
+     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;ModelSetDocAction&quot; type=&quot;tns:ModelSetDocAction&quot;/&gt;
+     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;ADLoginRequest&quot; type=&quot;tns:ADLoginRequest&quot;/&gt;
+   &lt;/xsd:sequence&gt;
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:element name=&quot;ModelRunProcess&quot; type=&quot;tns:ModelRunProcess&quot;/&gt;
+
+   &lt;xsd:complexType name=&quot;ModelRunProcess&quot;&gt;
+    &lt;xsd:sequence&gt;
+      &lt;xsd:element name=&quot;serviceType&quot; type=&quot;xsd:string&quot;/&gt;
+   	  &lt;xsd:element name=&quot;ParamValues&quot; type=&quot;tns:DataRow&quot;/&gt;
+    &lt;/xsd:sequence&gt;
+   	&lt;xsd:attribute name=&quot;AD_Process_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;AD_Menu_ID&quot; type=&quot;xsd:int&quot;/&gt;
+   	&lt;xsd:attribute name=&quot;AD_Record_ID&quot; type=&quot;xsd:int&quot;/&gt; 	
+   	&lt;xsd:attribute name=&quot;DocAction&quot; type=&quot;xsd:string&quot;/&gt;
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:element name=&quot;ModelRunProcessRequest&quot; type=&quot;tns:ModelRunProcessRequest&quot;/&gt;
+
+   &lt;xsd:complexType name=&quot;ModelRunProcessRequest&quot;&gt;
+   &lt;xsd:sequence&gt;
+     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;ModelRunProcess&quot; type=&quot;tns:ModelRunProcess&quot;/&gt;
+     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;ADLoginRequest&quot; type=&quot;tns:ADLoginRequest&quot;/&gt;
+   &lt;/xsd:sequence&gt;
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:element name=&quot;ModelGetListRequest&quot; type=&quot;tns:ModelGetListRequest&quot;/&gt;
+
+   &lt;xsd:complexType name=&quot;ModelGetList&quot;&gt;
+   &lt;xsd:sequence&gt;
+     &lt;xsd:element name=&quot;serviceType&quot; type=&quot;xsd:string&quot;/&gt;
+     &lt;xsd:element name=&quot;AD_Reference_ID&quot; type=&quot;xsd:int&quot;/&gt;
+     &lt;xsd:element name=&quot;Filter&quot; type=&quot;xsd:string&quot;/&gt;
+   &lt;/xsd:sequence&gt;
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:complexType name=&quot;ModelGetListRequest&quot;&gt;
+   &lt;xsd:sequence&gt;
+     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;ModelGetList&quot; type=&quot;tns:ModelGetList&quot;/&gt;
+     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;ADLoginRequest&quot; type=&quot;tns:ADLoginRequest&quot;/&gt;
+   &lt;/xsd:sequence&gt;
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:element name=&quot;ModelCRUDRequest&quot; type=&quot;tns:ModelCRUDRequest&quot;/&gt;
+
+   &lt;xsd:complexType name=&quot;ModelCRUD&quot;&gt;
+   &lt;xsd:sequence&gt;
+     &lt;xsd:element name=&quot;serviceType&quot; type=&quot;xsd:string&quot;/&gt;
+     &lt;xsd:element name=&quot;TableName&quot; type=&quot;xsd:string&quot;/&gt;
+     &lt;xsd:element name=&quot;RecordID&quot; type=&quot;xsd:int&quot;/&gt;
+     &lt;xsd:element name=&quot;Filter&quot; type=&quot;xsd:string&quot;/&gt;
+     &lt;xsd:element name=&quot;Action&quot;&gt;
+     	&lt;xsd:simpleType&gt;
+     		&lt;xsd:restriction base=&quot;xsd:string&quot;&gt;
+     			&lt;xsd:enumeration value=&quot;Create&quot;/&gt;
+     			&lt;xsd:enumeration value=&quot;Read&quot;/&gt;
+     			&lt;xsd:enumeration value=&quot;Update&quot;/&gt;
+     			&lt;xsd:enumeration value=&quot;Delete&quot;/&gt;
+     		&lt;/xsd:restriction&gt;
+     	&lt;/xsd:simpleType&gt;
+     &lt;/xsd:element&gt;
+     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;0&quot; name=&quot;DataRow&quot; type=&quot;tns:DataRow&quot;/&gt;
+   &lt;/xsd:sequence&gt;
+   &lt;/xsd:complexType&gt;
+
+   &lt;xsd:complexType name=&quot;ModelCRUDRequest&quot;&gt;
+   &lt;xsd:sequence&gt;
+     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;ModelCRUD&quot; type=&quot;tns:ModelCRUD&quot;/&gt;
+     &lt;xsd:element maxOccurs=&quot;1&quot; minOccurs=&quot;1&quot; name=&quot;ADLoginRequest&quot; type=&quot;tns:ADLoginRequest&quot;/&gt;
+   &lt;/xsd:sequence&gt;
+   &lt;/xsd:complexType&gt;
+
+&lt;/xsd:schema&gt;
+  &lt;/wsdl:types&gt;
+  &lt;wsdl:message name=&quot;queryDataResponse&quot;&gt;
+    &lt;wsdl:part name=&quot;WindowTabData&quot; element=&quot;tns:WindowTabData&quot;/&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;runProcessResponse&quot;&gt;
+    &lt;wsdl:part name=&quot;RunProcessResponse&quot; element=&quot;tns:RunProcessResponse&quot;/&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;getListResponse&quot;&gt;
+    &lt;wsdl:part name=&quot;WindowTabData&quot; element=&quot;tns:WindowTabData&quot;/&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;getListRequest&quot;&gt;
+    &lt;wsdl:part name=&quot;ModelGetListRequest&quot; element=&quot;tns:ModelGetListRequest&quot;/&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;setDocActionResponse&quot;&gt;
+    &lt;wsdl:part name=&quot;StandardResponse&quot; element=&quot;tns:StandardResponse&quot;/&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;readDataRequest&quot;&gt;
+    &lt;wsdl:part name=&quot;ModelCRUDRequest&quot; element=&quot;tns:ModelCRUDRequest&quot;/&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;createDataRequest&quot;&gt;
+    &lt;wsdl:part name=&quot;ModelCRUDRequest&quot; element=&quot;tns:ModelCRUDRequest&quot;/&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;updateDataResponse&quot;&gt;
+    &lt;wsdl:part name=&quot;StandardResponse&quot; element=&quot;tns:StandardResponse&quot;/&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;setDocActionRequest&quot;&gt;
+    &lt;wsdl:part name=&quot;ModelSetDocActionRequest&quot; element=&quot;tns:ModelSetDocActionRequest&quot;/&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;queryDataRequest&quot;&gt;
+    &lt;wsdl:part name=&quot;ModelCRUDRequest&quot; element=&quot;tns:ModelCRUDRequest&quot;/&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;deleteDataResponse&quot;&gt;
+    &lt;wsdl:part name=&quot;StandardResponse&quot; element=&quot;tns:StandardResponse&quot;/&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;deleteDataRequest&quot;&gt;
+    &lt;wsdl:part name=&quot;ModelCRUDRequest&quot; element=&quot;tns:ModelCRUDRequest&quot;/&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;createDataResponse&quot;&gt;
+    &lt;wsdl:part name=&quot;StandardResponse&quot; element=&quot;tns:StandardResponse&quot;/&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;readDataResponse&quot;&gt;
+    &lt;wsdl:part name=&quot;WindowTabData&quot; element=&quot;tns:WindowTabData&quot;/&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;runProcessRequest&quot;&gt;
+    &lt;wsdl:part name=&quot;ModelRunProcessRequest&quot; element=&quot;tns:ModelRunProcessRequest&quot;/&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name=&quot;updateDataRequest&quot;&gt;
+    &lt;wsdl:part name=&quot;ModelCRUDRequest&quot; element=&quot;tns:ModelCRUDRequest&quot;/&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:portType name=&quot;ModelADServicePortType&quot;&gt;
+    &lt;wsdl:operation name=&quot;runProcess&quot;&gt;
+      &lt;wsdl:input name=&quot;runProcessRequest&quot; message=&quot;tns:runProcessRequest&quot;/&gt;
+      &lt;wsdl:output name=&quot;runProcessResponse&quot; message=&quot;tns:runProcessResponse&quot;/&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name=&quot;createData&quot;&gt;
+      &lt;wsdl:input name=&quot;createDataRequest&quot; message=&quot;tns:createDataRequest&quot;/&gt;
+      &lt;wsdl:output name=&quot;createDataResponse&quot; message=&quot;tns:createDataResponse&quot;/&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name=&quot;updateData&quot;&gt;
+      &lt;wsdl:input name=&quot;updateDataRequest&quot; message=&quot;tns:updateDataRequest&quot;/&gt;
+      &lt;wsdl:output name=&quot;updateDataResponse&quot; message=&quot;tns:updateDataResponse&quot;/&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name=&quot;readData&quot;&gt;
+      &lt;wsdl:input name=&quot;readDataRequest&quot; message=&quot;tns:readDataRequest&quot;/&gt;
+      &lt;wsdl:output name=&quot;readDataResponse&quot; message=&quot;tns:readDataResponse&quot;/&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name=&quot;getList&quot;&gt;
+      &lt;wsdl:input name=&quot;getListRequest&quot; message=&quot;tns:getListRequest&quot;/&gt;
+      &lt;wsdl:output name=&quot;getListResponse&quot; message=&quot;tns:getListResponse&quot;/&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name=&quot;setDocAction&quot;&gt;
+      &lt;wsdl:input name=&quot;setDocActionRequest&quot; message=&quot;tns:setDocActionRequest&quot;/&gt;
+      &lt;wsdl:output name=&quot;setDocActionResponse&quot; message=&quot;tns:setDocActionResponse&quot;/&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name=&quot;deleteData&quot;&gt;
+      &lt;wsdl:input name=&quot;deleteDataRequest&quot; message=&quot;tns:deleteDataRequest&quot;/&gt;
+      &lt;wsdl:output name=&quot;deleteDataResponse&quot; message=&quot;tns:deleteDataResponse&quot;/&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name=&quot;queryData&quot;&gt;
+      &lt;wsdl:input name=&quot;queryDataRequest&quot; message=&quot;tns:queryDataRequest&quot;/&gt;
+      &lt;wsdl:output name=&quot;queryDataResponse&quot; message=&quot;tns:queryDataResponse&quot;/&gt;
+    &lt;/wsdl:operation&gt;
+  &lt;/wsdl:portType&gt;
+  &lt;wsdl:binding name=&quot;ModelADServiceHttpBinding&quot; type=&quot;tns:ModelADServicePortType&quot;&gt;
+    &lt;wsdlsoap:binding style=&quot;rpc&quot; transport=&quot;http://schemas.xmlsoap.org/soap/http&quot;/&gt;
+    &lt;wsdl:operation name=&quot;runProcess&quot;&gt;
+      &lt;wsdlsoap:operation soapAction=&quot;&quot;/&gt;
+      &lt;wsdl:input name=&quot;runProcessRequest&quot;&gt;
+        &lt;wsdlsoap:body use=&quot;literal&quot; namespace=&quot;http://3e.pl/ADInterface&quot;/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output name=&quot;runProcessResponse&quot;&gt;
+        &lt;wsdlsoap:body use=&quot;literal&quot; namespace=&quot;http://3e.pl/ADInterface&quot;/&gt;
+      &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name=&quot;createData&quot;&gt;
+      &lt;wsdlsoap:operation soapAction=&quot;&quot;/&gt;
+      &lt;wsdl:input name=&quot;createDataRequest&quot;&gt;
+        &lt;wsdlsoap:body use=&quot;literal&quot; namespace=&quot;http://3e.pl/ADInterface&quot;/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output name=&quot;createDataResponse&quot;&gt;
+        &lt;wsdlsoap:body use=&quot;literal&quot; namespace=&quot;http://3e.pl/ADInterface&quot;/&gt;
+      &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name=&quot;updateData&quot;&gt;
+      &lt;wsdlsoap:operation soapAction=&quot;&quot;/&gt;
+      &lt;wsdl:input name=&quot;updateDataRequest&quot;&gt;
+        &lt;wsdlsoap:body use=&quot;literal&quot; namespace=&quot;http://3e.pl/ADInterface&quot;/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output name=&quot;updateDataResponse&quot;&gt;
+        &lt;wsdlsoap:body use=&quot;literal&quot; namespace=&quot;http://3e.pl/ADInterface&quot;/&gt;
+      &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name=&quot;readData&quot;&gt;
+      &lt;wsdlsoap:operation soapAction=&quot;&quot;/&gt;
+      &lt;wsdl:input name=&quot;readDataRequest&quot;&gt;
+        &lt;wsdlsoap:body use=&quot;literal&quot; namespace=&quot;http://3e.pl/ADInterface&quot;/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output name=&quot;readDataResponse&quot;&gt;
+        &lt;wsdlsoap:body use=&quot;literal&quot; namespace=&quot;http://3e.pl/ADInterface&quot;/&gt;
+      &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name=&quot;getList&quot;&gt;
+      &lt;wsdlsoap:operation soapAction=&quot;&quot;/&gt;
+      &lt;wsdl:input name=&quot;getListRequest&quot;&gt;
+        &lt;wsdlsoap:body use=&quot;literal&quot; namespace=&quot;http://3e.pl/ADInterface&quot;/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output name=&quot;getListResponse&quot;&gt;
+        &lt;wsdlsoap:body use=&quot;literal&quot; namespace=&quot;http://3e.pl/ADInterface&quot;/&gt;
+      &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name=&quot;setDocAction&quot;&gt;
+      &lt;wsdlsoap:operation soapAction=&quot;&quot;/&gt;
+      &lt;wsdl:input name=&quot;setDocActionRequest&quot;&gt;
+        &lt;wsdlsoap:body use=&quot;literal&quot; namespace=&quot;http://3e.pl/ADInterface&quot;/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output name=&quot;setDocActionResponse&quot;&gt;
+        &lt;wsdlsoap:body use=&quot;literal&quot; namespace=&quot;http://3e.pl/ADInterface&quot;/&gt;
+      &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name=&quot;deleteData&quot;&gt;
+      &lt;wsdlsoap:operation soapAction=&quot;&quot;/&gt;
+      &lt;wsdl:input name=&quot;deleteDataRequest&quot;&gt;
+        &lt;wsdlsoap:body use=&quot;literal&quot; namespace=&quot;http://3e.pl/ADInterface&quot;/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output name=&quot;deleteDataResponse&quot;&gt;
+        &lt;wsdlsoap:body use=&quot;literal&quot; namespace=&quot;http://3e.pl/ADInterface&quot;/&gt;
+      &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name=&quot;queryData&quot;&gt;
+      &lt;wsdlsoap:operation soapAction=&quot;&quot;/&gt;
+      &lt;wsdl:input name=&quot;queryDataRequest&quot;&gt;
+        &lt;wsdlsoap:body use=&quot;literal&quot; namespace=&quot;http://3e.pl/ADInterface&quot;/&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output name=&quot;queryDataResponse&quot;&gt;
+        &lt;wsdlsoap:body use=&quot;literal&quot; namespace=&quot;http://3e.pl/ADInterface&quot;/&gt;
+      &lt;/wsdl:output&gt;
+    &lt;/wsdl:operation&gt;
+  &lt;/wsdl:binding&gt;
+  &lt;wsdl:service name=&quot;ModelADService&quot;&gt;
+    &lt;wsdl:port name=&quot;ModelADServiceHttpPort&quot; binding=&quot;tns:ModelADServiceHttpBinding&quot;&gt;
+      &lt;wsdlsoap:address location=&quot;http://localhost/ADInterface/services/ModelADService&quot;/&gt;
+    &lt;/wsdl:port&gt;
+  &lt;/wsdl:service&gt;
+&lt;/wsdl:definitions&gt;
+
+</pre>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 4/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wikidb:pcache:idhash:9922-0!1!0!!en!2!edit=0 and timestamp 20120116040846 -->
+<div class="printfooter">
+Retrieved from "<a href="http://www.adempiere.com/ModelADService.wsdl">http://www.adempiere.com/ModelADService.wsdl</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="/ModelADService.wsdl" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="/index.php?title=Talk:ModelADService.wsdl&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="/index.php?title=ModelADService.wsdl&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="/index.php?title=ModelADService.wsdl&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="/index.php?title=Special:UserLogin&amp;returnto=ModelADService.wsdl" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/images/d/dd/AdempiereLogo.png);" href="/ADempiere_ERP" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class='generated-sidebar portlet' id='p-Main_Links'>
+		<h5>Main Links</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-Home"><a href="/ADempiere_ERP">Home</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-Documentation'>
+		<h5>Documentation</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-Table-of-Contents"><a href="http://www.adempiere.com/index.php/Table_of_Contents">Table of Contents</a></li>
+				<li id="n-Documentation"><a href="http://www.adempiere.com/index.php/Category:Documentation">Documentation</a></li>
+				<li id="n-Tutorials"><a href="http://www.adempiere.com/index.php/Tutorials">Tutorials</a></li>
+				<li id="n-Development"><a href="http://www.adempiere.com/index.php/Development">Development</a></li>
+				<li id="n-Technical-HOWTOs"><a href="http://www.adempiere.com/index.php/Technical_HOWTOs">Technical HOWTOs</a></li>
+				<li id="n-Functional-HOWTOs"><a href="http://www.adempiere.com/index.php/Functional_HOWTOs">Functional HOWTOs</a></li>
+				<li id="n-Training"><a href="http://www.adempiere.com/index.php/Category:Training_Course">Training</a></li>
+				<li id="n-Features"><a href="http://www.adempiere.com/index.php/Features">Features</a></li>
+				<li id="n-Concepts"><a href="http://www.adempiere.com/index.php/Category:ERP_concepts_and_functionalities">Concepts</a></li>
+				<li id="n-Glossary"><a href="http://www.adempiere.com/index.php/Glossary">Glossary</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-Project_Links'>
+		<h5>Project Links</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-SourceForge.net"><a href="http://sf.net/projects/adempiere">SourceForge.net</a></li>
+				<li id="n-ADempiere.org"><a href="http://www.adempiere.org">ADempiere.org</a></li>
+				<li id="n-ADempiere.com"><a href="http://www.adempiere.com">ADempiere.com</a></li>
+				<li id="n-GoogleSearch"><a href="http://www.google.com/coop/cse?cx=016889972604713699431%3Avravql1hghw">GoogleSearch</a></li>
+				<li id="n-Download"><a href="http://sourceforge.net/projects/adempiere/files/">download</a></li>
+				<li id="n-Support"><a href="http://sourceforge.net/projects/adempiere/support">Support</a></li>
+				<li id="n-Events"><a href="http://adempiere.org/home/activities_events">Events</a></li>
+				<li id="n-Track-Bugs"><a href="http://www.adempiere.com/index.php/Bug_Triage">Track Bugs</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class='generated-sidebar portlet' id='p-Wiki_Help'>
+		<h5>Wiki Help</h5>
+		<div class='pBody'>
+			<ul>
+				<li id="n-portal"><a href="/ADempiere_ERP_Wiki:Community_Portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-recentchanges"><a href="/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/index.php" id="searchform"><div>
+				<input type='hidden' name="title" value="Special:Search"/>
+				<input id="searchInput" name="search" type="text" title="Search ADempiere ERP Wiki [f]" accesskey="f" value="" />
+				<input type='submit' name="go" class="searchButton" id="searchGoButton"	value="Go" title="Go to a page with this exact name if exists" />&nbsp;
+				<input type='submit' name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" />
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="/Special:WhatLinksHere/ModelADService.wsdl" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="/Special:RecentChangesLinked/ModelADService.wsdl" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="/index.php?title=ModelADService.wsdl&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="/index.php?title=ModelADService.wsdl&amp;oldid=27512" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" /></a></div>
+				<div id="f-copyrightico"><a href="http://sourceforge.net/projects/adempiere"><img src="http://sourceforge.net/sflogo.php?group_id=176962&amp;type=1" alt='GNU Free Documentation License 1.2' /></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 2 February 2009, at 02:36.</li>
+					<li id="viewcount">This page has been accessed 1,447 times.</li>
+					<li id="copyright">Content is available under GNU Free Documentation License 1.2.</li>
+					<li id="privacy"><a href="/ADempiere_ERP_Wiki:Privacy_policy" title="ADempiere ERP Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="/ADempiere_ERP_Wiki:About" title="ADempiere ERP Wiki:About">About ADempiere ERP Wiki</a></li>
+					<li id="disclaimer"><a href="/ADempiere_ERP_Wiki:General_disclaimer" title="ADempiere ERP Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 0.153 secs. --></body></html>
